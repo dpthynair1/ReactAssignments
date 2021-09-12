@@ -1,0 +1,70 @@
+const redux = require('redux');
+const createStore =redux.createStore;
+
+//action 
+
+const ADD_HERO = 'ADD_HERO';
+const ADD_MOVIE = 'ADD_MOVIE '
+// action creator/dispatcher
+
+function addHero (){
+    return {
+        type : ADD_HERO,
+        info : "first redux app'"
+    }
+}
+
+
+function addMovie (){
+    return {
+        type : ADD_MOVIE,
+        info : "first redux app'"
+    }
+}
+//Default /initial state
+
+const initialState = {
+    numberOfHeroes : 0,
+    numberOfMovies : 0
+}
+// reducer
+
+const reducer = (state = initialState,action) => {
+
+    switch(action.type){
+        case ADD_HERO : return{
+            ...state,
+            numberOfHeroes : state.numberOfHeroes +1
+        }
+
+        case ADD_MOVIE : return{
+            ...state,
+            numberOfMovies : state.numberOfMovies  + 1
+        }
+        default : return state
+    }
+
+}
+// store
+
+const store = createStore(reducer);
+
+// subscribe
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
+const unsubscribe = store.subscribe(() => {
+    console.log(store.getState())
+})
+
+store.dispatch(addHero());
+store.dispatch(addMovie());
+store.dispatch(addHero());
+store.dispatch(addMovie());
+
+
+// unsubscribe
+unsubscribe();
+console.log('unsubscribed');

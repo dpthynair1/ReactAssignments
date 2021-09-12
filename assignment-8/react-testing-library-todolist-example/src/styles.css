@@ -1,0 +1,41 @@
+.App {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  max-width: 500px;
+  padding: 48px;
+}
+
+.todo {
+  padding: 12px;
+  background: #f8f8f8;
+  margin-bottom: 24px;
+}
+
+.todo .name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.todo .deleteButton {
+  background: crimson;
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  margin-top: 12px;
+  padding: 4px 8px;
+}
+
+.createButton {
+  background: navy;
+  color: white;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  margin-top: 12px;
+  padding: 4px 8px;
+}
+
+input {
+  padding: 4px 8px;
+  font-size: 18px;
+}
